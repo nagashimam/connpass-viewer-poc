@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { EventsRoutingModule } from './events-routing.module';
 import { EventsComponent } from './events.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 import { MatDatepickerIntl, MatDatepickerModule } from "@angular/material/datepicker"
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { DateAdapter, MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE, NativeDateAdapter, NativeDateModule } from '@angular/material/core';
+import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE, NativeDateAdapter, NativeDateModule } from '@angular/material/core';
 import { DatePickerLocalization } from './date-picker-localization';
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DatePickerLocalization } from './date-picker-localization';
     FormsModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [
     { provide: DateAdapter, useClass: NativeDateAdapter },

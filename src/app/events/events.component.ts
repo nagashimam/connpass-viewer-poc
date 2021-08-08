@@ -16,7 +16,8 @@ export class EventsComponent implements OnInit {
     this.toPlaceholder = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate() + 7}`
   }
 
-  range = new FormGroup({
+  searchForm = new FormGroup({
+    keyword: new FormControl(),
     from: new FormControl(),
     to: new FormControl()
   });
