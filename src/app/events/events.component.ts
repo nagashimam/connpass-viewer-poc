@@ -26,4 +26,8 @@ export class EventsComponent implements OnInit {
 
   }
 
+  search() {
+    console.log("search");
+  }
+
 }

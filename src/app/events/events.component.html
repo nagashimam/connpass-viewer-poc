@@ -19,6 +19,7 @@
                 *ngIf="searchForm.controls.from.hasError('matStartDateInvalid') || searchForm.controls.to.hasError('matEndDateInvalid')">
                 日付を選択し直してください</mat-error>
         </mat-form-field>
+        <button mat-raised-button color="primary" (click)="search()">検索</button>
     </form>
 </section>
 <section>
