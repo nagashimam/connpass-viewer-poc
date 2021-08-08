@@ -24,4 +24,7 @@
 </section>
 <section>
     <h2>検索結果</h2>
+    <ng-container *ngFor="let event of events$ | async; trackBy:trackById">
+        {{event.title}}
+    </ng-container>
 </section>
