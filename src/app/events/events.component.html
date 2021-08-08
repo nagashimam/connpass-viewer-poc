@@ -1,1 +1,22 @@
-<p>events works!</p>
+<h1>イベント検索</h1>
+<section>
+    <h2>検索条件</h2>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>開催日</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                <input matStartDate formControlName="from" [placeholder]="fromPlaceholder">
+                <input matEndDate formControlName="to" [placeholder]="toPlaceholder">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+
+            <mat-error
+                *ngIf="range.controls.from.hasError('matStartDateInvalid') || range.controls.to.hasError('matEndDateInvalid')">
+                日付を選択し直してください</mat-error>
+        </mat-form-field>
+    </form>
+</section>
+<section>
+    <h2>検索結果</h2>
+</section>
