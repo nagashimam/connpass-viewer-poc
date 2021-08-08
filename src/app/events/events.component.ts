@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { EventsService } from '../state/events.service';
 
 @Component({
   selector: 'app-events',
@@ -10,7 +11,7 @@ export class EventsComponent implements OnInit {
   fromPlaceholder: string;
   toPlaceholder: string;
 
-  constructor() {
+  constructor(private eventsService: EventsService) {
     const today = new Date();
     this.fromPlaceholder = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`
     this.toPlaceholder = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate() + 7}`
@@ -27,7 +28,7 @@ export class EventsComponent implements OnInit {
   }
 
   search() {
-    console.log("search");
+    this.eventsService.get("Angular", new Date(2021, 7, 1), new Date(2021, 9, 1)).subscribe((response) => { console.log(response) })
   }
 
 }

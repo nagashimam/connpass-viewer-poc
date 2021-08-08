@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE, NativeDateAdapter, NativeDateModule } from '@angular/material/core';
 import { DatePickerLocalization } from './date-picker-localization';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     EventsComponent
@@ -24,7 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [
     { provide: DateAdapter, useClass: NativeDateAdapter },
