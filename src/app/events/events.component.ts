@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { EventsQuery } from '../state/events.query';
 import { EventsService } from '../state/events.service';
 import { Event } from "../state/event.model";
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-events',
@@ -15,7 +16,7 @@ export class EventsComponent {
   toPlaceholder: string;
   events$: Observable<Event[]>
 
-  constructor(private eventsService: EventsService, private eventsQuery: EventsQuery) {
+  constructor(private eventsService: EventsService, private eventsQuery: EventsQuery, private router: Router) {
     const today = new Date();
     this.fromPlaceholder = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`
     this.toPlaceholder = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate() + 7}`
@@ -35,6 +36,10 @@ export class EventsComponent {
 
   trackById(_: number, value: Event): number | null {
     return value ? value.event_id : null;
+  }
+
+  goToDetail(event: Event) {
+    this.router.navigateByUrl(`/events/details?event_id=${event.event_id}`);
   }
 
 }
