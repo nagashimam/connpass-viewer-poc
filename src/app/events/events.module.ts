@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { MatDatepickerIntl, MatDatepickerModule } from "@angular/material/datepicker"
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE, NativeDateAdapter, NativeDateModule } from '@angular/material/core';
+import { DateAdapter, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
 import { DatePickerLocalization } from './date-picker-localization';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from "@angular/material/card";
@@ -31,7 +31,6 @@ import { MatCardModule } from "@angular/material/card";
   providers: [
     { provide: DateAdapter, useClass: NativeDateAdapter },
     { provide: MatDatepickerIntl, useClass: DatePickerLocalization },
-    { provide: MAT_DATE_LOCALE, useValue: 'ja' },
   ],
 })
 export class EventsModule { }

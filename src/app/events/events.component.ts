@@ -31,6 +31,7 @@ export class EventsComponent {
   });
 
   search() {
+    // FIXME: 検索条件で日付を片方しか入力してない場合とか面倒ね。
     this.eventsService.get("Angular", new Date(2021, 7, 1), new Date(2021, 9, 1)).subscribe((response) => { console.log(response) })
   }
 
@@ -39,7 +40,7 @@ export class EventsComponent {
   }
 
   goToDetail(event: Event) {
-    this.router.navigateByUrl(`/events/details?event_id=${event.event_id}`);
+    this.router.navigateByUrl(`/events/summary?event_id=${event.event_id}`);
   }
 
 }

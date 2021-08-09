@@ -1,0 +1,28 @@
+<!-- FIXME: なんか全体的にマークアップ見直して階層化したほうがいい気がする -->
+<ng-container *ngIf="event$ | async as event">
+    <h1>イベント概要</h1>
+    <h2>{{ event.title}}</h2>
+    <h3>{{event.catch}}</h3>
+    <h2>主催者</h2>
+    <p>{{event.series.title}}</p>
+    <h2>住所</h2>
+    <p>{{event.address}}</p>
+    <a fxLayout="row" fxLayoutAlign="start center">
+        <label id="map" for="map-icon">グールグルマップを開く</label>
+        <mat-icon id="map-icon" aria-labelledby="map">forward</mat-icon>
+    </a>
+    <h2>日時</h2>
+    <p>{{event.started_at | date : 'short'}} 〜 {{event.ended_at | date : 'shortTime'}} </p>
+    <a fxLayout="row" fxLayoutAlign="start center">
+        <label id="calendar" for="calendar-icon">グールグルカレンダーを開く</label>
+        <mat-icon id="calendar-icon" aria-labelledby="calendar">forward</mat-icon>
+    </a>
+    <a fxLayout="row" fxLayoutAlign="start center">
+        <label id="application" for="application-icon">参加を申し込む(connpassを開く) </label>
+        <mat-icon id="application-icon" aria-labelledby="application">forward</mat-icon>
+    </a>
+    <a fxLayout="row" fxLayoutAlign="start center">
+        <label id="details" for="details-icon">詳細</label>
+        <mat-icon id="details-icon" aria-labelledby="details">forward</mat-icon>
+    </a>
+</ng-container>
