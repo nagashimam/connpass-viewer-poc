@@ -9,4 +9,14 @@ import { Event } from "../state/event.model";
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
+
+  // FIXME: undefinedのときどうするか考える(ありえないはずだけど)
+  event$: Observable<Event | undefined> = of();
+
+  constructor(private activatedRoute: ActivatedRoute, private eventsQuery: EventsQuery) {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.event$ = this.eventsQuery.selectEntity(params.event_id);
+    });
+  }
+
 }
