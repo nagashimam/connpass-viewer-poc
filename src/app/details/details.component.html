@@ -1,1 +1,3 @@
-<p>details works!</p>
+<ng-container *ngIf="event$ | async as event">
+    <p>{{ event.title}}</p>
+</ng-container>
