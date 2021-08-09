@@ -17,10 +17,11 @@
         <label id="calendar" for="calendar-icon">グールグルカレンダーを開く</label>
         <mat-icon id="calendar-icon" aria-labelledby="calendar">forward</mat-icon>
     </a>
-    <a fxLayout="row" fxLayoutAlign="start center">
+    <a fxLayout="row" fxLayoutAlign="start center" [href]="event.event_url" target="_blank">
         <label id="application" for="application-icon">参加を申し込む(connpassを開く) </label>
         <mat-icon id="application-icon" aria-labelledby="application">forward</mat-icon>
     </a>
+    <!-- FIXME: 詳細はこのページに埋め込みでもいいかも。treeとか使って1度に表示する量は調整しなきゃだけど -->
     <a fxLayout="row" fxLayoutAlign="start center" (click)="goToDetails(event)">
         <label id="details" for="details-icon">詳細</label>
         <mat-icon id="details-icon" aria-labelledby="details">forward</mat-icon>

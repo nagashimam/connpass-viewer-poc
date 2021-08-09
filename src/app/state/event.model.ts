@@ -14,6 +14,7 @@ export interface Event {
   series: Group;
   started_at: Date;
   title: string;
+  event_url: string;
 }
 
 export interface Group {
