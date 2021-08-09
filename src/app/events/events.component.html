@@ -25,7 +25,7 @@
 <section>
     <h2>検索結果</h2>
     <ng-container *ngFor="let event of events$ | async; trackBy:trackById">
-        <a (click)="goToDetail(event)">
+        <a (click)="goToSummary(event)">
             <mat-card>
                 <mat-card-title>{{event.title}}</mat-card-title>
                 <mat-card-subtitle>{{event.catch}}</mat-card-subtitle>

@@ -21,7 +21,7 @@
         <label id="application" for="application-icon">参加を申し込む(connpassを開く) </label>
         <mat-icon id="application-icon" aria-labelledby="application">forward</mat-icon>
     </a>
-    <a fxLayout="row" fxLayoutAlign="start center">
+    <a fxLayout="row" fxLayoutAlign="start center" (click)="goToDetails(event)">
         <label id="details" for="details-icon">詳細</label>
         <mat-icon id="details-icon" aria-labelledby="details">forward</mat-icon>
     </a>

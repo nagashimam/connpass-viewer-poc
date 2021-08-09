@@ -39,7 +39,7 @@ export class EventsComponent {
     return value ? value.event_id : null;
   }
 
-  goToDetail(event: Event) {
+  goToSummary(event: Event) {
     this.router.navigateByUrl(`/events/summary?event_id=${event.event_id}`);
   }
 
